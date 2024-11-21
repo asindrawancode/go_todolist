@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  todolist:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - todolist-db-volume:/app
+    environment:
+      - JWT_SECRET=your_secret_key
+
+volumes:
+  todolist-db-volume:
